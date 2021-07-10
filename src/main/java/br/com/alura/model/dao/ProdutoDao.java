@@ -36,4 +36,18 @@ public class ProdutoDao {
         return em.createQuery("jpql").getResultList();
     }
 
+    public List<Produto> busrcarPorNome(String nome){
+        String jpql = "SELECT p FROM Produto p WHERE p.nome = :nome";
+        return em.createQuery("jpql")
+                .setParameter("nome", nome)
+                .getResultList();
+    }
+
+    public List<Produto> busrcarPorNomeDaCategoria(String nome){
+        String jpql = "SELECT p FROM Produto p WHERE p.categoria.nome = :nome";
+        return em.createQuery("jpql")
+                .setParameter("nome", nome)
+                .getResultList();
+    }
+
 }
