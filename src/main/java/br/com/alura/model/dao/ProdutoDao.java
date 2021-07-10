@@ -1,8 +1,10 @@
 package br.com.alura.model.dao;
 
+import br.com.alura.model.Categoria;
 import br.com.alura.model.Produto;
 
 import javax.persistence.EntityManager;
+import java.util.List;
 
 public class ProdutoDao {
 
@@ -13,6 +15,25 @@ public class ProdutoDao {
     }
 
     public void cadastrar(Produto produto){
-
+        this.em.persist(produto);
     }
+
+    public void atualizar(Produto produto){
+        this.em.merge(produto);
+    }
+
+    public void remover(Produto produto){
+        produto = em.merge(produto);
+        this.em.remove(produto);
+    }
+
+    public Produto buscarPorId(Long id){
+        return em.find(Produto.class, id);
+    }
+
+    public List<Produto> buscarTodos(){
+        String jpql = "SELECT * FROM Produto p";
+        return em.createQuery("jpql").getResultList();
+    }
+
 }
