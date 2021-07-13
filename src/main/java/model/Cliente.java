@@ -1,4 +1,4 @@
-package br.com.alura.model;
+package model;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -6,21 +6,25 @@ import lombok.Setter;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "categorias")
+@Table(name = "clientes")
 @Getter
 @Setter
-public class Categoria {
+public class Cliente {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String nome;
+    private String cpf;
 
-    public Categoria(String nome) {
+    public Cliente(Long id, String nome, String cpf) {
+        this.id = id;
         this.nome = nome;
+        this.cpf = cpf;
     }
 
-    public Categoria() {
-    }
+    public Cliente() {
 
+    }
 }

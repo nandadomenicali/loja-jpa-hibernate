@@ -1,7 +1,6 @@
-package br.com.alura.model.dao;
+package dao;
 
-import br.com.alura.model.Categoria;
-import br.com.alura.model.Produto;
+import model.Produto;
 
 import javax.persistence.EntityManager;
 import java.math.BigDecimal;

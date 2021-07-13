@@ -1,4 +1,4 @@
-package br.com.alura.model;
+package model;
 
 import lombok.Getter;
 import lombok.Setter;

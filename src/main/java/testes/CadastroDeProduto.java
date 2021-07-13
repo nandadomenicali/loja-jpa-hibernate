@@ -1,9 +1,9 @@
-package br.com.alura.model.testes;
+package testes;
 
-import br.com.alura.model.Categoria;
-import br.com.alura.model.Produto;
-import br.com.alura.model.dao.CategoriaDao;
-import br.com.alura.model.dao.ProdutoDao;
+import model.Categoria;
+import model.Produto;
+import dao.CategoriaDao;
+import dao.ProdutoDao;
 import br.com.alura.model.util.JPAUtil;
 
 import javax.persistence.EntityManager;
