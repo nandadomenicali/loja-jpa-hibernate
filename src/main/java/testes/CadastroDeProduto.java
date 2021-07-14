@@ -4,7 +4,7 @@ import model.Categoria;
 import model.Produto;
 import dao.CategoriaDao;
 import dao.ProdutoDao;
-import br.com.alura.model.util.JPAUtil;
+import util.JPAUtil;
 
 import javax.persistence.EntityManager;
 import java.math.BigDecimal;
