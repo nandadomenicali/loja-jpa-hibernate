@@ -37,4 +37,8 @@ public class ItemPedido {
     public ItemPedido() {
 
     }
+
+    public BigDecimal getValor(){
+        return precoUnitario.multiply(new BigDecimal(quantidade));
+    }
 }

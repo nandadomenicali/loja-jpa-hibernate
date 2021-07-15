@@ -20,7 +20,7 @@ public class Pedido {
     private Long id;
 
     @Column(name = "valor_total")
-    private BigDecimal valorTotal;
+    private BigDecimal valorTotal = BigDecimal.ZERO;
 
     private LocalDate data = LocalDate.now();
 
@@ -38,6 +38,7 @@ public class Pedido {
         //setar os relacionamentos
         item.setPedido(this);
         this.itens.add(item);
+        this.valorTotal = this.valorTotal.add(item.getValor());
     }
 
     public Pedido() {
